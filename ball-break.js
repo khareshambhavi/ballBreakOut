@@ -1,4 +1,4 @@
-
+//made by arjun and shambhavi
 const WIDTH=500,//declaring width size for canvas
 HEIGHT=500,//declaring size of height for canvas 
 canvas=document.getElementById('canvas'),//calling canvas from html file
