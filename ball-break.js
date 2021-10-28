@@ -5,6 +5,16 @@ const WIDTH=500,//declaring width of the canvas
 canvas.width=WIDTH;//assigning WIDTH to the canvas
 canvas.height=HEIGHT;//assigning height to the canvas
 
+var score =0;
+var rsbtn = document.querySelector(".start");
+var scoreEle = document.querySelector(".score");
+scoreEle.innerHTML=score;
+
+
+rsbtn.addEventListener("click",()=>{
+    location.reload();
+})
+
 //Variable
 var blockArr=[],//Array for displaying yellow blocks
     blockIndex=0,//for giving number to each block
@@ -123,6 +133,9 @@ function displayBlock(){
         if(isBallhitsBlock(ball,b) && b.isShow){//if ball is hit by block
             ball.yDirSpeed=-ball.yDirSpeed;//mirror image of y speed
             b.isShow=false;//make that block invisble
+            score++;
+            console.log(score);
+            scoreEle.innerHTML=score;
             numObBlocksHit++;//add the no of blocks that have been hit till now
             if(numObBlocksHit==(numBlockCol-1)*numBlockRow){//if all the blocks have been hit
                isLevelCompleted=true; //level completeed
